@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import Burger from '../../components/Burger/Burger';
+import BurgerBuildControls from '../../components/BurgerBuildControls/BurgerBuildControls';
 
 const burgerBuilder = props => {
   const initialState = {
@@ -18,6 +19,7 @@ const burgerBuilder = props => {
   return (
     <>
       <Burger ingredients={state.ingredients} />
+      <BurgerBuildControls />
     </>
   );
 };
