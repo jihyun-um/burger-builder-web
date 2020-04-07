@@ -16,10 +16,21 @@ const burgerBuilder = props => {
   // eslint-disable-next-line react-hooks/rules-of-hooks
   const [state, setState] = useState(initialState);
 
+  const addIngredientHandler = type => {
+    const { ingredients } = state;
+    const ingredientCount = ingredients[type];
+
+    const updatedIngredients = { ...ingredients };
+    updatedIngredients[type] = ingredientCount + 1;
+    setState({ ingredients: updatedIngredients });
+  };
+
   return (
     <>
       <Burger ingredients={state.ingredients} />
-      <BurgerBuildControls />
+      <BurgerBuildControls
+        addIngredient={addIngredientHandler}
+      />
     </>
   );
 };
